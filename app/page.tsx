@@ -189,7 +189,7 @@ export default function Home() {
         </section>
 
         {/* --- INTERACTIVE ABOUT SECTION --- */}
-<section id="about" className="mt-32 max-w-4xl mx-auto text-center scroll-mt-24 px-6">
+<section id="about" className="mt-32 w-full text-center scroll-mt-24">
   <span className="text-orange-600 font-bold uppercase tracking-wider text-sm">About Me</span>
   <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-8">Get to know the real Dhruv</h2>
 
@@ -226,40 +226,57 @@ export default function Home() {
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             I don't just write code; I build solutions. Specializing in <strong className="text-blue-600">React.js</strong> and <strong className="text-green-600">Shopify</strong>, I bridge the gap between complex backend logic and smooth, buttery frontend experiences.
           </p>
-          <div className="mt-6 flex gap-3 justify-center flex-wrap">
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">🚀 Performance Obsessed</span>
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">💎 Pixel Perfect</span>
-          </div>
-        </div>
-      )}
+          {/* --- FIXED BADGES (HIGH CONTRAST) --- */}
+                  <div className="mt-6 flex gap-3 justify-center flex-wrap">
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        🚀 Performance Obsessed
+                     </span>
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        💎 Pixel Perfect
+                     </span>
+                  </div>
+                </div>
+              )}
 
-      {activeTab === "student" && (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">Always learning, always growing.</h3>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Currently pursuing my <strong className="text-emerald-600">B.Tech in Computer Science</strong>. 
-            Academic theory is great, but I believe in getting my hands dirty with real-world projects. 
-            I treat every assignment like a production-level product.
-          </p>
-          <div className="mt-6 flex gap-3 justify-center flex-wrap">
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">📚 CS Major</span>
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">🧠 Fast Learner</span>
-          </div>
-        </div>
-      )}
+              {activeTab === "student" && (
+                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Always learning, always growing.</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                    Currently pursuing my <strong className="text-emerald-600">B.Tech in Computer Science</strong>. 
+                    Academic theory is great, but I believe in getting my hands dirty with real-world projects. 
+                    I treat every assignment like a production-level product.
+                  </p>
+                  {/* --- FIXED BADGES (HIGH CONTRAST) --- */}
+                  <div className="mt-6 flex gap-3 justify-center flex-wrap">
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        📚 CS Major
+                     </span>
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        🧠 Fast Learner
+                     </span>
+                  </div>
+                </div>
+              )}
 
-      {activeTab === "human" && (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">Powered by Pizza & Caffeine.</h3>
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            When I'm not debugging, I'm probably hunting for the best <strong className="text-orange-600">coffee</strong> in town 
-            or grabbing a slice of <strong className="text-orange-600">pizza</strong>. 
-            I believe the best ideas happen when you step away from the keyboard (usually to find food).
-          </p>
-          <div className="mt-6 flex gap-3 justify-center flex-wrap">
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">🍕 Pizza Lover</span>
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">☕️ Coffee Snob</span>
-             <span className="px-3 py-1 bg-slate-100 rounded-full text-sm font-medium">🎸 Guitar & Casio</span>
+              {activeTab === "human" && (
+                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Powered by Pizza & Caffeine.</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                    When I'm not debugging, I'm probably hunting for the best <strong className="text-orange-600">coffee</strong> in town 
+                    or grabbing a slice of <strong className="text-orange-600">pizza</strong>. 
+                    I believe the best ideas happen when you step away from the keyboard (usually to find food).
+                  </p>
+                  {/* --- FIXED BADGES (HIGH CONTRAST) --- */}
+                  <div className="mt-6 flex gap-3 justify-center flex-wrap">
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        🍕 Pizza Lover
+                     </span>
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        ☕️ Coffee Snob
+                     </span>
+                     <span className="px-4 py-2 bg-slate-800 text-white rounded-full text-sm font-bold shadow-md transform hover:scale-105 transition-transform cursor-default">
+                        🎸 Guitar & Casio
+                     </span>
           </div>
         </div>
       )}
@@ -325,7 +342,7 @@ export default function Home() {
         </section>
 
         {/* --- CONTACT SECTION (Wider Form & No Badge) --- */}
-<section id="contact" className="mt-32 w-full text-center mb-24 scroll-mt-24 px-6">
+<section id="contact" className="mt-32 w-full text-center mb-24 scroll-mt-24">
   
   {/* Custom Animation Styles */}
   <style jsx>{`
@@ -343,7 +360,7 @@ export default function Home() {
     }
   `}</style>
 
-  <div className="bg-slate-900 rounded-[3rem] p-8 md:p-20 text-white shadow-2xl relative overflow-hidden">
+  <div className="bg-slate-900 rounded-[2rem] md:rounded-[3rem] p-6 md:p-20 text-white shadow-2xl relative overflow-hidden">
     
     {/* Decorative background blobs */}
     <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
@@ -354,10 +371,10 @@ export default function Home() {
       
       {/* --- LOOPING HEADLINE --- */}
       <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-        <span className="text-white">Let's work</span>
+        <span className="text-white">Let's Work</span>
         {" "}
-        <span className="animate-text-shine inline-block">
-          together.
+        <span className="animate-text-shine inline-block pb-2">
+          Together.
         </span>
       </h2>
 
