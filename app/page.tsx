@@ -85,8 +85,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Specializing in <strong>React</strong>, <strong>Shopify</strong>, and modern UI. 
-            The code is bug-free, the sites are fast, and the mug is never empty.
+            Focused on building <strong>scalable</strong>, <strong>high-performance</strong> web applications, while exploring <strong>Rust</strong> to engineer <strong>low-latency distributed systems</strong> and <strong>modern backend architecture</strong>.
           </p>
 
           <div className="mt-10 flex justify-center">
