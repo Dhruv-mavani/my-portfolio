@@ -63,10 +63,10 @@ const skillCategories = [
   {
     title: "Core Competencies",
     skills: [
-      { name: "UI/UX Design", icon: "" }, 
-      { name: "Problem Solving", icon: "" },
-      { name: "Responsive Design", icon: "" },
-      { name: "SEO Basics", icon: "" }
+      { name: "UI/UX Design", icon: "/uiux.svg" }, 
+      { name: "Problem Solving", icon: "/problemsolving.svg" },
+      { name: "Responsive Design", icon: "/responsive.svg" },
+      { name: "SEO Basics", icon: "/SEO.svg" }
     ]
   },
 ];
@@ -429,13 +429,21 @@ export default function Home() {
         
       </div>
 
-      <footer className="py-10 text-center text-slate-400 text-sm w-full border-t border-slate-200">
-        © {new Date().getFullYear()} Dhruv Mavani. All rights reserved. Built with Next.js & Coffee☕.
+      <footer className="py-10 text-center text-slate-400 text-sm w-full border-t border-slate-200 flex flex-col md:flex-row items-center justify-center gap-2">
+        © {new Date().getFullYear()} Dhruv Mavani. All rights reserved. Built with <Image 
+            src="/next.svg" 
+            alt="Next.js" 
+            width={16} 
+            height={16} 
+            className="w-12 h-15 opacity-100 hover:opacity-100 transition-opacity" 
+          /> & Coffee☕.
       </footer>
     </main>
   );
 }
 
+{/* --- CONTACT SECTION (Compact Version) --- */}
+        
 
 //-----------------------------------------------------interactivity of form-----------------------------------------------------------
 function ContactForm() {
