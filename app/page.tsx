@@ -154,38 +154,36 @@ export default function Home() {
   </div>
 </div>
 
-        {/* --- PROJECTS SECTION --- */}
-        <section id="projects" className="mt-32 w-full scroll-mt-24">
-          <div className="flex flex-col items-center mb-12">
-            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">My Work</span>
-            <h2 className="text-4xl font-bold text-slate-900">Featured Projects</h2>
+        
+
+        {/* --- SKILLS SECTION --- */}
+        <section id="skills" className="mt-32 w-full scroll-mt-24">
+           <div className="flex flex-col items-center mb-12">
+            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">Expertise</span>
+            <h2 className="text-4xl font-bold text-slate-900">Tech Stack</h2>
           </div>
-          
-          <div className="grid gap-8 md:grid-cols-2">
-            {projects.map((project, index) => (
-              <a 
-                key={index}
-                href={project.link}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative block p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <span className="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold uppercase rounded-full tracking-wide">
-                    {project.tag}
-                  </span>
-                  <span className="text-slate-300 group-hover:text-orange-500 transition-colors text-xl">↗</span>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
-                  {project.title}
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {skillCategories.map((cat, idx) => (
+              <div key={idx} className="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-bold text-slate-900 mb-6 border-b pb-4 border-slate-100">
+                  {cat.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {project.desc}
-                </p>
-              </a>
+                <div className="flex flex-wrap gap-3">
+                  {cat.skills.map((skill) => (
+                    <span 
+                      key={skill} 
+                      className="px-4 py-2 bg-slate-50 text-slate-700 rounded-lg text-sm font-medium border border-slate-100 hover:bg-orange-50 hover:text-orange-700 hover:border-orange-100 transition-colors cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
+
 
         {/* --- INTERACTIVE ABOUT SECTION --- */}
 <section id="about" className="mt-32 w-full text-center scroll-mt-24">
@@ -284,33 +282,40 @@ export default function Home() {
   </div>
 </section>
 
-        {/* --- SKILLS SECTION --- */}
-        <section id="skills" className="mt-32 w-full scroll-mt-24">
-           <div className="flex flex-col items-center mb-12">
-            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">Expertise</span>
-            <h2 className="text-4xl font-bold text-slate-900">Tech Stack</h2>
+        
+        {/* --- PROJECTS SECTION --- */}
+        <section id="projects" className="mt-32 w-full scroll-mt-24">
+          <div className="flex flex-col items-center mb-12">
+            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">My Work</span>
+            <h2 className="text-4xl font-bold text-slate-900">Featured Projects</h2>
           </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {skillCategories.map((cat, idx) => (
-              <div key={idx} className="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-bold text-slate-900 mb-6 border-b pb-4 border-slate-100">
-                  {cat.title}
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {cat.skills.map((skill) => (
-                    <span 
-                      key={skill} 
-                      className="px-4 py-2 bg-slate-50 text-slate-700 rounded-lg text-sm font-medium border border-slate-100 hover:bg-orange-50 hover:text-orange-700 hover:border-orange-100 transition-colors cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+          
+          <div className="grid gap-8 md:grid-cols-2">
+            {projects.map((project, index) => (
+              <a 
+                key={index}
+                href={project.link}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative block p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <span className="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold uppercase rounded-full tracking-wide">
+                    {project.tag}
+                  </span>
+                  <span className="text-slate-300 group-hover:text-orange-500 transition-colors text-xl">↗</span>
                 </div>
-              </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {project.desc}
+                </p>
+              </a>
             ))}
           </div>
         </section>
+
 
         {/* --- EXPERIENCE SECTION --- */}
         <section id="experience" className="mt-32 w-full scroll-mt-24">
