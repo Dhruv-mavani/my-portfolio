@@ -184,6 +184,34 @@ export default function Home() {
           </div>
         </section>
 
+        {/* --- EXPERIENCE SECTION --- */}
+        <section id="experience" className="mt-32 w-full scroll-mt-24">
+          <div className="flex flex-col items-center mb-12">
+            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">Career</span>
+            <h2 className="text-4xl font-bold text-slate-900">Experience</h2>
+          </div>
+
+          <div className="relative p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
+            {/* Timeline dot decoration */}
+            <div className="absolute top-8 left-0 w-2 h-16 bg-orange-500 rounded-r-full"></div>
+            
+            <div className="ml-4">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                <h3 className="text-2xl font-bold text-slate-900">Web Development Intern</h3>
+                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-sm font-semibold rounded-full mt-2 md:mt-0 w-fit">
+                  Jan 2026 – Mar 2026
+                </span>
+              </div>
+              <p className="text-lg font-medium text-orange-600 mb-4">Hunani Infotech</p>
+              <p className="text-slate-600 leading-relaxed">
+                Worked on real client projects involving Shopify and WordPress
+                customization, responsive design improvements, and user experience
+                enhancements.
+              </p>
+            </div>
+          </div>
+        </section>
+
 
         {/* --- INTERACTIVE ABOUT SECTION --- */}
 <section id="about" className="mt-32 w-full text-center scroll-mt-24">
@@ -315,35 +343,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-
-        {/* --- EXPERIENCE SECTION --- */}
-        <section id="experience" className="mt-32 w-full scroll-mt-24">
-          <div className="flex flex-col items-center mb-12">
-            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">Career</span>
-            <h2 className="text-4xl font-bold text-slate-900">Experience</h2>
-          </div>
-
-          <div className="relative p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition">
-            {/* Timeline dot decoration */}
-            <div className="absolute top-8 left-0 w-2 h-16 bg-orange-500 rounded-r-full"></div>
-            
-            <div className="ml-4">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                <h3 className="text-2xl font-bold text-slate-900">Web Development Intern</h3>
-                <span className="px-3 py-1 bg-slate-100 text-slate-600 text-sm font-semibold rounded-full mt-2 md:mt-0 w-fit">
-                  Jan 2026 – Mar 2026
-                </span>
-              </div>
-              <p className="text-lg font-medium text-orange-600 mb-4">Hunani Infotech</p>
-              <p className="text-slate-600 leading-relaxed">
-                Worked on real client projects involving Shopify and WordPress
-                customization, responsive design improvements, and user experience
-                enhancements.
-              </p>
-            </div>
-          </div>
-        </section>
+      
 
         {/* --- CONTACT SECTION (Wider Form & No Badge) --- */}
 <section id="contact" className="mt-32 w-full text-center mb-24 scroll-mt-24">
