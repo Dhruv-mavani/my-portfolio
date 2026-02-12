@@ -435,7 +435,7 @@ export default function Home() {
             alt="Next.js" 
             width={16} 
             height={16} 
-            className="w-12 h-15 opacity-100 hover:opacity-100 transition-opacity" 
+            className="w-12 h-12 opacity-100 hover:opacity-100 transition-opacity" 
           /> & Coffee☕.
       </footer>
     </main>
