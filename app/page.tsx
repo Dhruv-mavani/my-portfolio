@@ -31,23 +31,43 @@ const projects = [
   },
 ];
 
+
+
+
+
 // --- DATA: SKILLS ---
 const skillCategories = [
   {
     title: "Frontend",
-    skills: ["React.js", "Next.js", "Tailwind CSS", "JavaScript (ES6+)", "HTML5", "CSS3"]
+    skills: [{name: "React.js", icon: "/react.svg"}, 
+      {name: "Next.js", icon: "/Next.svg"}, 
+      {name: "Tailwind CSS", icon: "/Tailwind.svg"}, 
+      {name: "JavaScript (ES6+)", icon: "/js.svg"},
+      {name: "HTML5", icon: "/HTML.svg"},
+      {name: "CSS3", icon: "/css3.svg"}]
   },
   {
     title: "Backend & Database",
-    skills: ["Node.js", "Firebase", "MongoDB", "REST APIs"]
+    skills: [{name: "Node.js", icon: "/node.svg"},
+      {name: "Firebase", icon: "/firebase.svg"},
+      {name: "MongoDB", icon: "/mongodb.svg"},
+      {name: "REST APIs", icon: "/restAPI.svg"}]
   },
   {
     title: "Tools & Platforms",
-    skills: ["Git & GitHub", "VS Code", "Shopify Liquid", "Vercel"]
+    skills: [{name: "Git & GitHub", icon: "/github.svg"},
+      {name: "VS Code", icon: "/vs-code.svg"},
+      {name: "Shopify Liquid", icon: "/shopify.svg"},
+      {name: "Vercel", icon: "/Vercel.svg"}]
   },
   {
     title: "Core Competencies",
-    skills: ["UI/UX Design", "Problem Solving", "Responsive Design", "SEO Basics"]
+    skills: [
+      { name: "UI/UX Design", icon: "" }, 
+      { name: "Problem Solving", icon: "" },
+      { name: "Responsive Design", icon: "" },
+      { name: "SEO Basics", icon: "" }
+    ]
   },
 ];
 
@@ -170,12 +190,24 @@ export default function Home() {
                   {cat.title}
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  {cat.skills.map((skill) => (
+                  {cat.skills.map((skill, skillIdx) => (
                     <span 
-                      key={skill} 
-                      className="px-4 py-2 bg-slate-50 text-slate-700 rounded-lg text-sm font-medium border border-slate-100 hover:bg-orange-50 hover:text-orange-700 hover:border-orange-100 transition-colors cursor-default"
+                      key={skillIdx} 
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-50 text-slate-700 rounded-lg text-sm font-medium border border-slate-100 hover:bg-orange-50 hover:text-orange-700 hover:border-orange-100 transition-colors cursor-default"
                     >
-                      {skill}
+                      {/* 1. Show Icon (Only if it's not empty) */}
+                      {skill.icon && (
+                        <Image 
+                          src={skill.icon} 
+                          alt={skill.name} 
+                          width={20} 
+                          height={20} 
+                          className="w-5 h-5" 
+                        />
+                      )}
+                      
+                      {/* 2. Show Name (This is what fixed the error!) */}
+                      {skill.name} 
                     </span>
                   ))}
                 </div>
