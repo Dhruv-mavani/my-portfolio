@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "VTOL Bi-Copter Prototype",
-    desc: "Designed and built a UAV prototype with 3D printing, aerodynamics optimization, and cost-efficient engineering.",
+    desc: "Designed and built a UAV prototype with 3D printing, aerodynamics optimization, and cost-efficient engineering, focusing on stability control, weight reduction, and flight performance testing through iterative design improvements and calibration.",
     link: "https://www.linkedin.com/posts/dhruvmavanii_vtol-bicopter-3dprinting-activity-7331290468707733505-C9yG",
     tag: "Engineering"
   },
