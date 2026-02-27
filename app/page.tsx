@@ -430,7 +430,7 @@ export default function Home() {
       </div>
 
       <footer className="py-10 text-center text-slate-400 text-sm w-full border-t border-slate-200 flex flex-col md:flex-row items-center justify-center gap-2">
-        © {new Date().getFullYear()} Dhruv Mavani. All rights reserved. Built with <Image 
+        © {new Date().getFullYear()} Dhruv Mavani. All rights reserved. Built with <Image
             src="/next.svg" 
             alt="Next.js" 
             width={16} 
