@@ -15,7 +15,7 @@ const projects = [
   {
     title: "Merituno – Gamified Learning",
     desc: "Developed a React + Firebase platform featuring XP progression, quizzes, dashboards, and interactive learning modules.",
-    link: "https://github.com/Dhruv-mavani/Merituno-Learn2Earn-",
+    github: "https://github.com/Dhruv-mavani/Merituno-Learn2Earn-",
     tag: "React + Firebase"
   },
   {
@@ -256,48 +256,55 @@ export default function Home() {
           </div>
           
           <div className="grid gap-8 md:grid-cols-2">
-            {projects.map((project, index) => (
-  <div
-    key={index}
-    onClick={() => window.open(project.link, "_blank")}
-    className="group relative block p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
-  >
-    <div className="flex justify-between items-start mb-4">
-      <span className="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold uppercase rounded-full tracking-wide">
-        {project.tag}
-      </span>
+            {projects.map((project, index) => {
+  const mainLink = project.link || project.github;
 
-      <div className="flex gap-3 items-center">
-        {/* External Link Icon */}
-        <ExternalLink
-          size={20}
-          className="text-slate-300 group-hover:text-orange-500 transition-colors"
-        />
+  return (
+    <div
+      key={index}
+      onClick={() => mainLink && window.open(mainLink, "_blank")}
+      className="group relative block p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+    >
+      <div className="flex justify-between items-start mb-4">
+        <span className="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold uppercase rounded-full tracking-wide">
+          {project.tag}
+        </span>
 
-        {/* GitHub Link (ONLY if exists) */}
-        {project.github && (
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="text-slate-300 hover:text-black transition-colors"
-          >
-            <Github size={20} />
-          </a>
-        )}
+        <div className="flex gap-3 items-center">
+          
+          {/* If project has live link → show External icon */}
+          {project.link && (
+            <ExternalLink
+              size={20}
+              className="text-slate-300 group-hover:text-orange-500 transition-colors"
+            />
+          )}
+
+          {/* If project has GitHub → show GitHub icon */}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="text-slate-300 hover:text-black transition-colors"
+            >
+              <Github size={20} />
+            </a>
+          )}
+        </div>
       </div>
+
+      <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
+        {project.title}
+      </h3>
+
+      <p className="text-slate-600 leading-relaxed">
+        {project.desc}
+      </p>
     </div>
-
-    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
-      {project.title}
-    </h3>
-
-    <p className="text-slate-600 leading-relaxed">
-      {project.desc}
-    </p>
-  </div>
-))}
+  );
+})}
           </div>
         </section>
 
