@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Github, ExternalLink } from "lucide-react";
 
 // --- DATA: PROJECTS ---
 const projects = [
@@ -24,9 +25,10 @@ const projects = [
     tag: "Engineering"
   },
   {
-    title: "Shopify Client Customizations",
-    desc: "Worked on real-world Shopify and WordPress projects, improving UI, navigation, responsiveness, and user experience.",
-    link: "https://sanginiadvancedwomenscare.myshopify.com",
+    title: "Smile Guru Clinic Management System",
+    desc: "Engineered a responsive full-stack clinic management application, optimizing user experience, appointment workflows, and admin dashboard usability across desktop and mobile platforms.",
+    link: "https://smileguru.vercel.app",
+    github: "https://github.com/Dhruv-mavani/Smile-Guru-dentistry",
     tag: "Freelance"
   },
 ];
@@ -51,6 +53,7 @@ const skillCategories = [
     skills: [{name: "Node.js", icon: "/node.svg"},
       {name: "Firebase", icon: "/firebase.svg"},
       {name: "MongoDB", icon: "/mongodb.svg"},
+      {name: "PostgreSQL", icon: "/postgre.svg"},
       {name: "REST APIs", icon: "/restAPI.svg"}]
   },
   {
@@ -244,8 +247,61 @@ export default function Home() {
           </div>
         </section>
 
+        
+        {/* --- PROJECTS SECTION --- */}
+        <section id="projects" className="mt-32 w-full scroll-mt-24">
+          <div className="flex flex-col items-center mb-12">
+            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">My Work</span>
+            <h2 className="text-4xl font-bold text-slate-900">Featured Projects</h2>
+          </div>
+          
+          <div className="grid gap-8 md:grid-cols-2">
+            {projects.map((project, index) => (
+  <div
+    key={index}
+    onClick={() => window.open(project.link, "_blank")}
+    className="group relative block p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
+  >
+    <div className="flex justify-between items-start mb-4">
+      <span className="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold uppercase rounded-full tracking-wide">
+        {project.tag}
+      </span>
 
-        {/* --- INTERACTIVE ABOUT SECTION --- */}
+      <div className="flex gap-3 items-center">
+        {/* External Link Icon */}
+        <ExternalLink
+          size={20}
+          className="text-slate-300 group-hover:text-orange-500 transition-colors"
+        />
+
+        {/* GitHub Link (ONLY if exists) */}
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-slate-300 hover:text-black transition-colors"
+          >
+            <Github size={20} />
+          </a>
+        )}
+      </div>
+    </div>
+
+    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
+      {project.title}
+    </h3>
+
+    <p className="text-slate-600 leading-relaxed">
+      {project.desc}
+    </p>
+  </div>
+))}
+          </div>
+        </section>
+
+                {/* --- INTERACTIVE ABOUT SECTION --- */}
 <section id="about" className="mt-32 w-full text-center scroll-mt-24">
   <span className="text-orange-600 font-bold uppercase tracking-wider text-sm">About Me</span>
   <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-8">Get to know the real Dhruv</h2>
@@ -341,40 +397,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
-        
-        {/* --- PROJECTS SECTION --- */}
-        <section id="projects" className="mt-32 w-full scroll-mt-24">
-          <div className="flex flex-col items-center mb-12">
-            <span className="text-orange-600 font-bold uppercase tracking-wider text-sm mb-2">My Work</span>
-            <h2 className="text-4xl font-bold text-slate-900">Featured Projects</h2>
-          </div>
-          
-          <div className="grid gap-8 md:grid-cols-2">
-            {projects.map((project, index) => (
-              <a 
-                key={index}
-                href={project.link}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative block p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-orange-100 transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <span className="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-bold uppercase rounded-full tracking-wide">
-                    {project.tag}
-                  </span>
-                  <span className="text-slate-300 group-hover:text-orange-500 transition-colors text-xl">↗</span>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {project.desc}
-                </p>
-              </a>
-            ))}
-          </div>
-        </section>
       
 
         {/* --- CONTACT SECTION (Wider Form & No Badge) --- */}
