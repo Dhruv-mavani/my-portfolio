@@ -95,11 +95,11 @@ export default function Home() {
 
           <div className="mb-8 w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full overflow-hidden border-[6px] border-white shadow-2xl transform hover:scale-105 transition duration-500">
             <Image
-              src="/Me.jpeg"
+              src="/Me2.jpeg"
               alt="Dhruv Mavani"
               width={220}
               height={220}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-150%"
               priority
             />
           </div>
@@ -209,7 +209,7 @@ export default function Home() {
                           alt={skill.name}
                           width={20}
                           height={20}
-                          className="w-5 h-5"
+                          className="w-5 h-4"
                         />
                       )}
 
