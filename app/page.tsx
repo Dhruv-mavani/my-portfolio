@@ -7,6 +7,13 @@ import { Github, ExternalLink } from "lucide-react";
 // --- DATA: PROJECTS ---
 const projects = [
   {
+    title: "Solana Launchpad",
+    desc: "A production-ready Solana SPL token launchpad that enables users to create and deploy SPL tokens with Metaplex metadata integration, wallet connectivity, IPFS support, and multi-network support in under 2 minutes.",
+    link: "https://solanaspl.vercel.app",
+    github: "https://github.com/Dhruv-mavani/solanalaunchpad",
+    tag: "Solana + Metaplex"
+  },
+  {
     title: "omniWallet",
     desc: "OmniWallet is a comprehensive web application that functions as a digital wallet and crypto wallet built with React.js and TypeScript.",
     link: "https://omniwallet.vercel.app",
@@ -18,12 +25,6 @@ const projects = [
     desc: "Developed a React + Firebase platform featuring XP progression, quizzes, dashboards, and interactive learning modules.",
     github: "https://github.com/Dhruv-mavani/Merituno-Learn2Earn-",
     tag: "React + Firebase"
-  },
-  {
-    title: "VTOL Bi-Copter Prototype",
-    desc: "Designed and built a UAV prototype with 3D printing, aerodynamics optimization, and cost-efficient engineering, focusing on stability control, weight reduction, and flight performance testing through iterative design improvements and calibration.",
-    link: "https://www.linkedin.com/posts/dhruvmavanii_vtol-bicopter-3dprinting-activity-7331290468707733505-C9yG",
-    tag: "Engineering"
   },
   {
     title: "Smile Guru Clinic Management System",
