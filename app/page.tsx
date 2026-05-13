@@ -347,7 +347,7 @@ export default function Home() {
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">Code that means business.</h3>
                   <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-                    I don't just write code; I build solutions. Specializing in <strong className="text-blue-600">React.js</strong> and <strong className="text-green-600">Shopify</strong>, I bridge the gap between complex backend logic and smooth, buttery frontend experiences.
+                    I don't just write code; I build solutions. Specializing in <strong className="text-blue-600">React.js</strong> and <strong className="text-purple-500">Solana</strong>, I bridge the gap between complex backend logic and smooth, buttery frontend experiences.
                   </p>
                   {/* --- FIXED BADGES (HIGH CONTRAST) --- */}
                   <div className="mt-6 flex gap-3 justify-center flex-wrap">
