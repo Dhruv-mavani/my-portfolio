@@ -6,6 +6,12 @@ import { Github, ExternalLink } from "lucide-react";
 
 // --- DATA: PROJECTS ---
 const projects = [
+   {
+    title: "LSP 2.0 – Solana Liquid Staking",
+    desc: "An optimized, production-ready Liquid Staking Derivative (LSD) protocol built using the Solana Anchor framework. Features a centralized Vault/Mint PDA, lazy reward calculation engine, and a glassmorphic Tailwind v4 dashboard.",
+    github: "https://github.com/Dhruv-mavani/LSP-2.0",
+    tag: "Solana + Anchor"
+  },
   {
     title: "Solana Launchpad",
     desc: "A production-ready Solana SPL token launchpad that enables users to create and deploy SPL tokens with Metaplex metadata integration, wallet connectivity, IPFS support, and multi-network support in under 2 minutes.",
@@ -19,12 +25,6 @@ const projects = [
     link: "https://omniwallet.vercel.app",
     github: "https://github.com/Dhruv-mavani/crypto-wallet-generator",
     tag: "React + TypeScript"
-  },
-  {
-    title: "Merituno – Gamified Learning",
-    desc: "Developed a React + Firebase platform featuring XP progression, quizzes, dashboards, and interactive learning modules.",
-    github: "https://github.com/Dhruv-mavani/Merituno-Learn2Earn-",
-    tag: "React + Firebase"
   },
   {
     title: "Smile Guru Clinic Management System",
