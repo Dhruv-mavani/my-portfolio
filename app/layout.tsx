@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-
-// Configure the font
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   // 1. Base Metadata
@@ -43,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         <Navbar />
         {children}
       </body>
