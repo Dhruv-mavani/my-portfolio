@@ -35,13 +35,32 @@ const projects = [
   },
 ];
 
-// --- DATA: TIMELINE ---
-const timelineItems = [
+// --- DATA: OPEN SOURCE ---
+const openSourceItems = [
   {
-    role: "Web Development Intern",
-    company: "Hunani Infotech",
-    period: "Jan 2026 – Mar 2026",
-    desc: "Worked on real client projects involving Shopify and WordPress customization, responsive design improvements, and user experience enhancements."
+    title: "Enforce shred_version matching during deserialization",
+    repo: "anza-xyz/agave · #13687",
+    bullets: [
+      "Opened against Solana's majority validator client, fixing issue #13227 in the votor-messages crate — part of Votor, Solana's consensus component.",
+      "Moved shred_version validation to happen during deserialization of wire consensus messages via a custom SchemaReadContext, closing off a class of bug where the check could be silently skipped downstream."
+    ],
+    stats: {
+      lines: "+98 / −17",
+      commits: "14 commits",
+      comments: "20 review comments",
+      files: "4 files"
+    },
+    link: "https://github.com/anza-xyz/agave/pull/13687"
+  },
+  {
+    title: "Fix JSDoc for calculateMinimumBalanceForRentExemption",
+    repo: "orca-so/whirlpools · #1324",
+    bullets: [
+      "Corrected JSDoc documentation for rent exemption calculations in the Whirlpools SDK.",
+      "Improved developer experience for downstream integrators building on Orca's concentrated liquidity AMM by ensuring accurate method signatures and comments."
+    ],
+    stats: null,
+    link: "https://github.com/orca-so/whirlpools/pull/1324"
   }
 ];
 
@@ -700,11 +719,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- EXPERIENCE SECTION --- */}
+        {/* --- OPEN SOURCE SECTION --- */}
         <section ref={experienceRef} id="experience" className="mt-32 w-full scroll-mt-24 relative max-w-3xl mx-auto">
           <div className="flex flex-col items-center mb-16">
-            <span className="text-purple-600 font-bold uppercase tracking-wider text-sm mb-2">Career</span>
-            <h2 className="text-4xl font-bold text-slate-900">Experience</h2>
+            <span className="text-purple-600 font-bold uppercase tracking-wider text-sm mb-2">Contributions</span>
+            <h2 className="text-4xl font-bold text-slate-900">Open Source</h2>
           </div>
 
           <div className="relative pl-8 md:pl-12 border-l-2 border-slate-200/60">
@@ -716,13 +735,17 @@ export default function Home() {
               />
             </div>
 
-            {/* Timeline Bullet Dot */}
-            <div className="absolute left-0 top-8 w-4 h-4 rounded-full border-4 border-white bg-purple-600 -translate-x-1/2 shadow-md z-10" />
-
             <motion.div 
               style={{ y: yExp0, scale: scaleExp0, rotateX: rotateXExp0, opacity: opacityExp0 }}
+              className="flex flex-col gap-12"
             >
-              <TimelineCard item={timelineItems[0]} isLeft={false} />
+              {openSourceItems.map((item, idx) => (
+                <div key={idx} className="relative w-full">
+                  {/* Timeline Bullet Dot */}
+                  <div className="absolute -left-[40px] md:-left-[56px] top-8 w-4 h-4 rounded-full border-4 border-white bg-purple-600 shadow-md z-10" />
+                  <OpenSourceCard item={item} />
+                </div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -1037,24 +1060,41 @@ export default function Home() {
 
 // --- SUB-COMPONENTS FOR TIMELINE & PROJECTS ---
 
-function TimelineCard({ item, isLeft }: { item: typeof timelineItems[0]; isLeft: boolean }) {
+function OpenSourceCard({ item }: { item: typeof openSourceItems[0] }) {
   return (
-    <div className={`p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition duration-300 relative text-left ${isLeft ? "md:text-right" : "md:text-left"}`}>
-      {/* Decorative vertical gradient bar on the card's edge */}
-      <div className={`absolute top-8 bottom-8 w-1 bg-gradient-to-b from-[#9945FF] to-purple-600 rounded-full ${isLeft ? "right-0" : "left-0"}`} />
+    <div className="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition duration-300 relative text-left">
+      <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+        <div>
+          <h3 className="text-xl font-bold text-slate-900 mb-1">{item.title}</h3>
+          <p className="text-slate-500 font-mono text-sm">{item.repo}</p>
+        </div>
+      </div>
       
-      <span className="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-bold uppercase rounded-full tracking-wide">
-        {item.period}
-      </span>
-      <h3 className="text-2xl font-bold text-slate-900 mt-3 mb-1">
-        {item.role}
-      </h3>
-      <p className="text-purple-600 font-semibold text-sm mb-4">
-        {item.company}
-      </p>
-      <p className="text-slate-600 leading-relaxed text-sm">
-        {item.desc}
-      </p>
+      {item.bullets.length > 0 && (
+        <ul className="list-disc list-outside ml-5 text-slate-600 leading-relaxed text-sm mb-6 space-y-2 marker:text-purple-400">
+          {item.bullets.map((b, i) => <li key={i}>{b}</li>)}
+        </ul>
+      )}
+
+      {item.stats && (
+        <div className="flex flex-wrap gap-4 mb-6">
+          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.lines}</strong></span>
+          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.commits}</strong></span>
+          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.comments}</strong></span>
+          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.files}</strong></span>
+        </div>
+      )}
+
+      {item.link && (
+        <a 
+          href={item.link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="inline-flex items-center gap-2 text-sm font-bold text-purple-600 hover:text-purple-700 transition-colors"
+        >
+          → view pull request
+        </a>
+      )}
     </div>
   );
 }

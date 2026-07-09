@@ -47,14 +47,20 @@ export default function Navbar() {
 
         {/* --- DESKTOP MENU --- */}
         <div className="hidden md:flex items-center gap-8 font-medium text-slate-600">
-          {["Projects", "About", "Skills", "Experience", "Contact"].map((item) => (
+          {[
+            { label: "Projects", id: "projects" },
+            { label: "About", id: "about" },
+            { label: "Skills", id: "skills" },
+            { label: "Open Source", id: "experience" },
+            { label: "Contact", id: "contact" }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={(e) => handleScroll(e, `#${item.toLowerCase()}`)}
+              key={item.label}
+              href={`#${item.id}`}
+              onClick={(e) => handleScroll(e, `#${item.id}`)}
               className="relative group py-1 transition-colors hover:text-slate-900"
             >
-              {item}
+              {item.label}
               <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-amber-600 transition-all duration-300 group-hover:w-full group-hover:left-0 ease-in-out"></span>
             </a>
           ))}
@@ -91,14 +97,20 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col items-center py-8 gap-6 text-lg font-medium text-slate-700">
-          {["Projects", "About", "Skills", "Experience", "Contact"].map((item) => (
+          {[
+            { label: "Projects", id: "projects" },
+            { label: "About", id: "about" },
+            { label: "Skills", id: "skills" },
+            { label: "Open Source", id: "experience" },
+            { label: "Contact", id: "contact" }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={(e) => handleScroll(e, `#${item.toLowerCase()}`)}
+              key={item.label}
+              href={`#${item.id}`}
+              onClick={(e) => handleScroll(e, `#${item.id}`)}
               className="hover:text-amber-600 transition-colors"
             >
-              {item}
+              {item.label}
             </a>
           ))}
           <a href="/resume.pdf" className="px-8 py-3 rounded-full bg-slate-900 text-white">
