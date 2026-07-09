@@ -41,14 +41,13 @@ const openSourceItems = [
     title: "Enforce shred_version matching during deserialization",
     repo: "anza-xyz/agave · #13687",
     bullets: [
-      "Opened against Solana's majority validator client, fixing issue #13227 in the votor-messages crate — part of Votor, Solana's consensus component.",
+      "Opened against Solana's majority validator client, fixing issue #13227 in the votor-messages crate - part of Votor, Solana's consensus component.",
       "Moved shred_version validation to happen during deserialization of wire consensus messages via a custom SchemaReadContext, closing off a class of bug where the check could be silently skipped downstream."
     ],
     stats: {
-      lines: "+98 / −17",
-      commits: "14 commits",
+      commits: "15+ commits",
       comments: "20 review comments",
-      files: "4 files"
+      size: "50+ Rust Crates"
     },
     link: "https://github.com/anza-xyz/agave/pull/13687"
   },
@@ -82,12 +81,15 @@ const skillCategories = [
   },
   {
     title: "Backend & Database",
-    skills: [{ name: "Rust", icon: "/rust.svg" },
-    { name: "Node.js", icon: "/node.svg" },
-    { name: "Firebase", icon: "/firebase.svg" },
-    { name: "MongoDB", icon: "/mongodb.svg" },
-    { name: "PostgreSQL", icon: "/postgre.svg" },
-    { name: "REST APIs", icon: "/restAPI.svg" }]
+    skills: [
+      { name: "Rust", icon: "/rust.svg" },
+      { name: "Anchor", icon: "/anchor.svg" },
+      { name: "Node.js", icon: "/node.svg" },
+      { name: "Firebase", icon: "/firebase.svg" },
+      { name: "MongoDB", icon: "/mongodb.svg" },
+      { name: "PostgreSQL", icon: "/postgre.svg" },
+      { name: "REST APIs", icon: "/restAPI.svg" }
+    ]
   },
   {
     title: "Tools & Platforms",
@@ -1078,22 +1080,26 @@ function OpenSourceCard({ item }: { item: typeof openSourceItems[0] }) {
 
       {item.stats && (
         <div className="flex flex-wrap gap-4 mb-6">
-          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.lines}</strong></span>
-          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.commits}</strong></span>
-          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.comments}</strong></span>
-          <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.files}</strong></span>
+          {item.stats.commits && <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.commits}</strong></span>}
+          {item.stats.comments && <span className="text-xs font-semibold px-3 py-1.5 bg-slate-50 text-slate-600 rounded-lg border border-slate-100"><strong className="text-slate-800">{item.stats.comments}</strong></span>}
+          {item.stats.size && (
+            <span className="text-xs font-semibold px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg border border-purple-100"><strong className="text-purple-900">{item.stats.size}</strong></span>
+          )}
         </div>
       )}
 
       {item.link && (
-        <a 
-          href={item.link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="inline-flex items-center gap-2 text-sm font-bold text-purple-600 hover:text-purple-700 transition-colors"
-        >
-          → view pull request
-        </a>
+        <div className="mt-4">
+          <a 
+            href={item.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-purple-600 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 group"
+          >
+            View Pull Request
+            <span className="inline-block transform -rotate-[30deg] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 font-black text-lg leading-none">→</span>
+          </a>
+        </div>
       )}
     </div>
   );
